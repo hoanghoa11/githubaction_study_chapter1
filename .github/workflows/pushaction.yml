@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run lint
-        run: npm lint 
+        run: npm run lint 
   test:
     runs-on: ubuntu-latest
     steps:
@@ -23,8 +23,8 @@ jobs:
           node-version: '18'
       - name: Install dependencies
         run: npm ci
-      - name: Run lint
-        run: npm lint 
+      - name: Run test
+        run: npm run test 
   deploy:
       needs: [test, lint]
       runs-on: ubuntu-latest
